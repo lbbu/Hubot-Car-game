@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 95bb5174b1968cd40883c8006090077d
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 16296
+  packageName: Realistic Car Controller
+  packageVersion: 4.5.0
+  assetPath: Assets/RealisticCarControllerV4/Shaders/HDRP/HDRP shaders will be stored
+    here.txt
+  uploadId: 772167

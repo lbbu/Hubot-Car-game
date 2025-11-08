@@ -764,7 +764,25 @@ PlayerSettings:
   webGLCloseOnQuit: 0
   webWasm2023: 0
   webEnableSubmoduleStrippingCompatibility: 0
-  scriptingDefineSymbols: {}
+  scriptingDefineSymbols:
+    Android: BCG_RCC
+    EmbeddedLinux: BCG_RCC
+    GameCoreScarlett: BCG_RCC
+    GameCoreXboxOne: BCG_RCC
+    Kepler: BCG_RCC
+    LinuxHeadlessSimulation: BCG_RCC
+    Nintendo Switch: BCG_RCC
+    PS4: BCG_RCC
+    PS5: BCG_RCC
+    QNX: BCG_RCC
+    ReservedCFE: BCG_RCC
+    Standalone: BCG_RCC
+    VisionOS: BCG_RCC
+    WebGL: BCG_RCC
+    Windows Store Apps: BCG_RCC
+    XboxOne: BCG_RCC
+    iPhone: BCG_RCC
+    tvOS: BCG_RCC
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend: {}
@@ -875,7 +893,7 @@ PlayerSettings:
   qnxGraphicConfPath: 
   apiCompatibilityLevel: 6
   captureStartupLogs: {}
-  activeInputHandler: 0
+  activeInputHandler: 2
   windowsGamepadBackendHint: 0
   cloudProjectId: ca8e4b81-fa4e-44e1-94e1-d64e8df9c73d
   framebufferDepthMemorylessMode: 0
