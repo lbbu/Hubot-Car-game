@@ -10,7 +10,6 @@ public class TwoPlayerCarController : MonoBehaviour
 
     void Start()
     {
-        // تفعيل Override للسيارتين
         if (player1Car != null)
             player1Car.overrideInputs = true;
 
@@ -25,12 +24,10 @@ public class TwoPlayerCarController : MonoBehaviour
         {
             RCC_Inputs player1Inputs = new RCC_Inputs();
 
-            // Steering
             float p1Horizontal = 0f;
             if (Input.GetKey(KeyCode.A)) p1Horizontal = -1f;
             if (Input.GetKey(KeyCode.D)) p1Horizontal = 1f;
 
-            // Throttle/Brake
             float p1Vertical = 0f;
             if (Input.GetKey(KeyCode.W)) p1Vertical = 1f;
             if (Input.GetKey(KeyCode.S)) p1Vertical = -1f;
@@ -40,6 +37,9 @@ public class TwoPlayerCarController : MonoBehaviour
             player1Inputs.brakeInput = Mathf.Clamp01(-p1Vertical);
             player1Inputs.handbrakeInput = Input.GetKey(KeyCode.Space) ? 1f : 0f;
 
+            // لاحظ: لا نغيّر boostInput هنا نهائياً
+            // player1Inputs.boostInput يظل 0، والأيتم هو اللي يفعّله
+
             player1Car.OverrideInputs(player1Inputs);
         }
 
@@ -48,12 +48,10 @@ public class TwoPlayerCarController : MonoBehaviour
         {
             RCC_Inputs player2Inputs = new RCC_Inputs();
 
-            // Steering
             float p2Horizontal = 0f;
             if (Input.GetKey(KeyCode.LeftArrow)) p2Horizontal = -1f;
             if (Input.GetKey(KeyCode.RightArrow)) p2Horizontal = 1f;
 
-            // Throttle/Brake
             float p2Vertical = 0f;
             if (Input.GetKey(KeyCode.UpArrow)) p2Vertical = 1f;
             if (Input.GetKey(KeyCode.DownArrow)) p2Vertical = -1f;
@@ -62,6 +60,8 @@ public class TwoPlayerCarController : MonoBehaviour
             player2Inputs.throttleInput = Mathf.Clamp01(p2Vertical);
             player2Inputs.brakeInput = Mathf.Clamp01(-p2Vertical);
             player2Inputs.handbrakeInput = Input.GetKey(KeyCode.RightShift) ? 1f : 0f;
+
+            // نفس الشيء هنا، لا نلمس boostInput
 
             player2Car.OverrideInputs(player2Inputs);
         }
