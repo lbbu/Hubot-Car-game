@@ -626,7 +626,7 @@ public class RCC_SceneManager : RCC_Singleton<RCC_SceneManager> {
         activePlayerVehicle = playerVehicle;
 
         if (activePlayerCamera)
-            activePlayerCamera.SetTarget(activePlayerVehicle);
+            //activePlayerCamera.SetTarget(activePlayerVehicle);
 
         if (loadCustomizationAtFirst)
             RCC_Customization_API.LoadStats(RCC_SceneManager.Instance.activePlayerVehicle);

@@ -8,13 +8,22 @@ public class TwoPlayerCarController : MonoBehaviour
     [Header("Player 2 - Arrow Keys")]
     public RCC_CarControllerV4 player2Car;
 
+    private RCCBoostState p1Boost;
+    private RCCBoostState p2Boost;
+
     void Start()
     {
         if (player1Car != null)
+        {
             player1Car.overrideInputs = true;
+            p1Boost = player1Car.GetComponent<RCCBoostState>();
+        }
 
         if (player2Car != null)
+        {
             player2Car.overrideInputs = true;
+            p2Boost = player2Car.GetComponent<RCCBoostState>();
+        }
     }
 
     void Update()
@@ -37,8 +46,11 @@ public class TwoPlayerCarController : MonoBehaviour
             player1Inputs.brakeInput = Mathf.Clamp01(-p1Vertical);
             player1Inputs.handbrakeInput = Input.GetKey(KeyCode.Space) ? 1f : 0f;
 
-            // لاحظ: لا نغيّر boostInput هنا نهائياً
-            // player1Inputs.boostInput يظل 0، والأيتم هو اللي يفعّله
+            // Boost from state
+            if (p1Boost != null && p1Boost.isBoosting)
+                player1Inputs.boostInput = 1f;
+            else
+                player1Inputs.boostInput = 0f;
 
             player1Car.OverrideInputs(player1Inputs);
         }
@@ -61,7 +73,10 @@ public class TwoPlayerCarController : MonoBehaviour
             player2Inputs.brakeInput = Mathf.Clamp01(-p2Vertical);
             player2Inputs.handbrakeInput = Input.GetKey(KeyCode.RightShift) ? 1f : 0f;
 
-            // نفس الشيء هنا، لا نلمس boostInput
+            if (p2Boost != null && p2Boost.isBoosting)
+                player2Inputs.boostInput = 1f;
+            else
+                player2Inputs.boostInput = 0f;
 
             player2Car.OverrideInputs(player2Inputs);
         }

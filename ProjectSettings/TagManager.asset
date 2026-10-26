@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
+  tags:
+  - Player1
+  - Player2
+  - PlayerCar1
+  - PlayerCar2
   layers:
   - Default
   - TransparentFX
@@ -17,10 +21,10 @@ TagManager:
   - RCC_WheelCollider
   - RCC_DetachablePart
   - RCC_Prop
-  - 
-  - 
-  - 
-  - 
+  - P1Checkpoints
+  - P2Checkpoints
+  - Player1
+  - Player2
   - 
   - 
   - 
